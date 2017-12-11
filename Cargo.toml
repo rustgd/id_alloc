@@ -1,0 +1,10 @@
+[package]
+name = "id_alloc"
+version = "0.1.0"
+authors = ["torkleyy <torkleyy@gmail.com>"]
+
+[dependencies]
+parking_lot = "0.5.3"
+
+[dev-dependencies]
+crossbeam = "0.3"
