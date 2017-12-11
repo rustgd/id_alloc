@@ -19,8 +19,8 @@ impl Allocator {
 
     pub fn alloc(&self) -> usize {
         self.free
-            .lock()
-            .pop()
+            .try_lock()
+            .and_then(|mut free| free.pop())
             .unwrap_or_else(|| self.counter.fetch_add(1, Ordering::Relaxed))
     }
 
